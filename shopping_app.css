@@ -1,0 +1,57 @@
+/*font: <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>*/
+
+body{
+    background-image: url('notebook_paper_background.png'); 
+    font-family: 'Architects Daughter', cursive;
+}
+
+.container{
+   /* border: solid blue; /*temporary*/
+}
+
+#title{
+   /* border: solid purple 2px; /*temporary*/
+    margin-top:140px;
+    margin-left:250px;
+    font-size:45px;
+    width:100%;
+}
+
+#item-count{
+   /* border: solid orange 2px;*/
+    margin-top:-2em;
+    margin-right:16em;
+    margin-left:30em;
+    font-size:25px;
+}
+.list{
+   /* border: solid green 2px; /*temporary*/
+    padding-left:0px;
+    margin-top:140px;
+    margin-left:250px;
+    margin-right:350px;
+    list-style:none;
+    font-size:25px;
+}
+
+input{
+    border:0;
+    outline:0;
+    background: transparent;
+    border-bottom: solid red;
+    font-family: 'Architects Daughter', cursive;
+    font-size:25px;
+    color:red;
+    /*I want this element underlined, and I want it to follow the last element on the list*/
+}
+button{
+    transform: rotate(20deg);
+    padding-top:2px;
+    border:none;
+    color:red;
+    background:transparent;
+    font-size:25px;
+    font-family: 'Architects Daughter', cursive;
+    text-decoration:underline;
+    cursor:pointer;
+}
