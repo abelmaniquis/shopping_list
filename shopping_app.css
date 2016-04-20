@@ -3,11 +3,9 @@
 }
 
 body{
-    background-image:url(bg.png);
+    background-image:url(images/bg.png);
     font-family: 'Source Sans Pro', sans-serif;
     text-align:center;
-    /*background-image: url('images/notebook_paper_background.png'); 
-    font-family: 'Architects Daughter', cursive;*/
 }
 
 h1{

@@ -2,13 +2,11 @@
 
 $(document).ready(function(){
         
-        //append items to list
         $("#btn1").click(function(){
-        $(".list").append('<li>' + $(".list-input").val() + '</li>') 
+        $(".list").append('<li>' + $(".list-input").val() + '</li>')
+        $(".list-input").val('');
         });
-        
         //strike and unstrike (check) items on the list
-        
         $('ul').on('click','li',function(event){
          $(this).toggleClass("stroked")
         });
@@ -30,11 +28,17 @@ $(document).ready(function(){
             $(this).css('color','white');
         })
      }); 
-});   
-/*App should do these things:
+});
 
+$(document).keydown(function(e){
+    if(e.keyCode == 13){
+        $(".list").append('<li>' + $(".list-input").val() + '</li>') 
+        $(".list-input").val('');
+    }
+})
+    
+/*App should do these things:
 Append items to the list
 allow users to check it off
 Allow users to remove items on list
-
 */
