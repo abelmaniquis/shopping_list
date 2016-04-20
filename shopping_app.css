@@ -14,22 +14,19 @@ h1{
     font-size:54px;
 }
 
+#instructions{
+    font-size:20px;
+    list-style:none;
+}
+
 .list{
     font-size:20px;
     list-style: none;
     cursor:pointer;
 }
 
-
-.list > li{
-}
-
 .stroked{ 
     text-decoration: line-through;
-}
-
-#userinput{
-
 }
 
 .list-input{
