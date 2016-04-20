@@ -7,7 +7,7 @@ $(document).ready(function(){
         $(".list-input").val('');
         });
         //strike and unstrike (check) items on the list
-        $('ul').on('click','li',function(event){
+        $('.list').on('click','li',function(event){
          $(this).toggleClass("stroked")
         });
      
