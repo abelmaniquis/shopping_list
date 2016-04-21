@@ -1,41 +1,57 @@
 /* $("#items p").wrap("<strike>");*/
 
-$(document).ready(function(){
-        
-        $("#btn1").click(function(){
-        $(".list").append('<li>' + $(".list-input").val() + '</li>')
-        $(".list-input").val('');
-        });
-        //strike and unstrike (check) items on the list
-        $('.list').on('click','li',function(event){
-         $(this).toggleClass("stroked")
-        });
-     
-        //remove items
-        $('ul').on('dblclick','li',function(event){
-            $(this).hide();
-        });
-        
-        //Clear List
-        $("#btn2").click(function(){
-            $("ul").empty();
-        })
-     
-     //Just some functionality for later
-        $("button").mouseenter(function(){
-            $(this).css('color','blue');
-        $("button").mouseleave(function(){
-            $(this).css('color','white');
-        })
-     }); 
-});
+$(document).ready(runWhenDocumentIsReady);
 
-$(document).keydown(function(e){
-    if(e.keyCode == 13){
-        $(".list").append('<li>' + $(".list-input").val() + '</li>') 
-        $(".list-input").val('');
-    }
-})
+
+function runWhenDocumentIsReady() {
+
+	$("#btn1").click(btnClick);
+	$('.list').on('click', 'li', lineThrough);
+	$('ul').on('dblclick', 'li', doubleClick);
+	$("#btn2").click(emptyInput);
+	$("button").hover(mouseOver, mouseOut);
+	$(document).keydown(enterPressed);
+
+}
+
+function btnClick() {
+	appendItem('.list', 'li', $(".list-input").val(), '.list-input');
+}
+
+function appendItem(element, item, value, input) {
+	$(element).append('<' + item + '>' + value + '</' + item + '>');
+	$(input).val('');
+}
+
+function lineThrough() {
+	$(this).toggleClass("stroked");
+}
+
+function doubleClick() {
+	$(this).hide();
+}
+
+function emptyInput() {
+	$("ul").empty();
+}
+
+function enterPressed(event) {
+	if (event.keyCode == 13) {
+		appendItem('.list', 'li', $(".list-input").val(), '.list-input');
+	}
+}
+
+function mouseOver() {
+	$(this).css('color', 'blue');
+}
+
+function mouseOut() {
+	$(this).css('color', 'white');
+}
+
+function changeStyle(element, property, value) {
+	$(element).css(property, value);
+}
     
 /*App should do these things:
 Append items to the list
